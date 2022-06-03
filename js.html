@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>js basic</title>
+</head>
+
+<body>
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- 07 -->
+    <div class="mytitle">
+        <p class="my-p">07</p>
+    </div>
+    <div class="mycontainer">
+        <!-- Bootstrap List Group -->
+        <button type="button" class="btn btn-success" id="btn-07">List Toggler</button>
+        <div class="mydivider"></div>
+        <div class="list-container-07">
+            <ul class="list-group">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">And a fifth one</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="mydivider"></div>
+
+    <script>
+        $('#btn-07').html('07');
+        $('#btn-07').css('color', 'yellowgreen');
+        $('#btn-07').on('click', ()=>{
+            $(".list-container-07").slideToggle();
+        })
+    </script>
+
+    <!-- 06 -->
+    <div class="mytitle">
+        <p class="my-p">06</p>
+    </div>
+    <div class="mycontainer">
+        <!-- Bootstrap List Group -->
+        <button type="button" class="btn btn-primary" id="btn-06">List Toggler</button>
+        <div class="mydivider"></div>
+        <div class="list-container">
+            <ul class="list-group">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">And a fifth one</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="mydivider"></div>
+
+    <script>
+
+        document.getElementById('btn-06').addEventListener('click', () => {
+            document.getElementsByClassName('list-container')[0].classList.toggle('show');
+        })
+    </script>
+
+    <!-- 01 -->
+    <div class="mytitle">
+        <p class="my-p">01</p>
+    </div>
+    <div class="mycontainer">
+        <h1 id="hello">Hello</h1>
+    </div>
+    <div class="mydivider"></div>
+
+    <!-- 02 -->
+    <div class="mytitle">
+        <p class="my-p">02</p>
+    </div>
+    <div class="mycontainer">
+        <div class="alert-box" id="alert">
+            <div class="content">
+                <span>alert popup</span>
+                <span id="close" onclick="display('none')">X</span>
+            </div>
+        </div>
+        <button onclick="display('block')">BUTTON</button>
+    </div>
+    <div class="mydivider"></div>
+
+    <!-- 03 -->
+    <div class="mytitle">
+        <p class="my-p">03</p>
+    </div>
+    <div class="mycontainer">
+        <div class="alert-box" id="sign-in">
+            <div class="content">
+                <span>sign in ... </span>
+                <span id="close" onclick="display2nd('sign-in' ,'none')">X</span>
+            </div>
+        </div>
+        <div class="alert-box" id="sign-up">
+            <div class="content">
+                <span>sign up ...</span>
+                <span id="close" onclick="display2nd('sign-up' ,'none')">X</span>
+            </div>
+        </div>
+        <button onclick="display2nd('sign-in' ,'block')">SIGN IN</button>
+        <button onclick="display2nd('sign-up' ,'block')">SIGN UP</button>
+    </div>
+    <div class="mydivider"></div>
+
+    <!-- 04 -->
+
+    <div class="mytitle">
+        <p class="my-p">04</p>
+    </div>
+    <div class="mycontainer">
+        <div class="alert-box" id="alert-04">
+            <div class="content">
+                <span>mouse over on/off</span>
+                <span id="close-04">X</span>
+            </div>
+        </div>
+        <button id="btn-04">BUTTON</button>
+    </div>
+    <div class="mydivider"></div>
+
+    <!-- 05 -->
+
+    <div class="mytitle">
+        <p class="my-p">04</p>
+    </div>
+    <div class="mycontainer">
+        <div class="alert-box" id="alert-04">
+            <div class="content">
+                <span>mouse over on/off</span>
+                <span id="close-04">X</span>
+            </div>
+        </div>
+        <button id="btn-04">BUTTON</button>
+    </div>
+    <div class="mydivider"></div>
+
+
+
+
+    <!-- js -->
+
+    <script>
+        document.getElementById('hello').style.fontSize = '4em';
+
+        function display(x) {
+            document.getElementById('alert').style.display = x;
+        }
+        function display2nd(id, dis) {
+            document.getElementById(id).style.display = dis;
+        }
+
+        document.getElementById('btn-04').addEventListener('mouseover', () => { display2nd('alert-04', 'block') });
+
+        document.getElementById('close-04').addEventListener('mouseover', () => { display2nd('alert-04', 'none') });
+
+        document
+
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
